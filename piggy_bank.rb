@@ -22,7 +22,7 @@ def calcAmount(money_arr)
 
     for money in money_arr do
         if !coins_or_banknotes.include?(money.amount)
-            puts "Error: 1度に複数の硬貨または紙幣を入れないでください"
+            puts "Error: 複数の紙幣や硬貨の組み合わせのみで実現できる金額(333円など)が投入されています"
             return nil
         end
         if money.damage or !units.include?(money.unit)

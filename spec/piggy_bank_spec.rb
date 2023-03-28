@@ -18,7 +18,7 @@ RSpec.describe '貯金箱' do
     context '複数の紙幣や硬貨が必要な金額(333円など)が1度に投入された場合' do
         it '標準出力にErrorを表示し, nilを返すこと' do
             @money_arr[0] = Money.new(333, false, "円")
-            expect{ calcAmount(@money_arr) }.to output("Error: 1度に複数の硬貨または紙幣を入れないでください\n").to_stdout
+            expect{ calcAmount(@money_arr) }.to output("Error: 複数の紙幣や硬貨の組み合わせのみで実現できる金額(333円など)が投入されています\n").to_stdout
             expect(calcAmount(@money_arr)).to eq nil
         end
     end
